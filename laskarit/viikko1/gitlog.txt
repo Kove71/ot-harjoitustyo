@@ -1,0 +1,74 @@
+
+    uudelleen nimetty ja poistettu
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 80daf6fb796df5f5fbf474019e0890d343d9a95a
+Author: Kosti Vesterinen <kosti.vesterinen@helsinki.fi>
+Date:   Sat Mar 20 20:14:39 2021 +0200
+
+    kolme tiedostoa lisätty
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d25f466e3ceec7e8a014a9928cc2e6c9684597f5
+Author: Kosti Vesterinen <kosti.vesterinen@helsinki.fi>
+Date:   Sat Mar 20 20:07:52 2021 +0200
+
+    muokkaukset
+
+ eka.txt    | 2 ++
+ kolmas.txt | 1 +
+ 2 files changed, 3 insertions(+)
+
+commit 26434deb0ba5d6d16b224f6d53ef78e1c280f414
+Author: Kosti Vesterinen <kosti.vesterinen@helsinki.fi>
+Date:   Sat Mar 20 20:05:50 2021 +0200
+
+    lisäys ja muutos
+
+ eka.txt    | 2 +-
+ kolmas.txt | 0
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+commit 8defcef2b7c29229df89ceb7202cbc677edb87a6
+Author: Kosti Vesterinen <kosti.vesterinen@helsinki.fi>
+Date:   Sat Mar 20 20:04:02 2021 +0200
+
+    uudelleen nimetty
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a810fecb09d78ec4fdf13140ab015d3efcb24b45
+Author: Kosti Vesterinen <kosti.vesterinen@helsinki.fi>
+Date:   Sat Mar 20 19:59:48 2021 +0200
+
+    toinen.txt poisto
+
+ toinen.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6700ed4892f1188d8159142302ed789b53fd2ad8
+Author: Kosti Vesterinen <kosti.vesterinen@helsinki.fi>
+Date:   Sat Mar 20 19:54:57 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 2 ++
+ toinen.txt   | 0
+ 2 files changed, 2 insertions(+)
+
+commit c69f1f3bb96841603df3716d5f8cd03b794182b9
+Author: Kosti Vesterinen <kosti.vesterinen@helsinki.fi>
+Date:   Sat Mar 20 19:50:00 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
