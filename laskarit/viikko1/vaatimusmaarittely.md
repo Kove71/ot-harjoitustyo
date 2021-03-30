@@ -7,12 +7,18 @@ Alkuvaiheessa sovelluksessa ei tule olemaan käyttäjiä, vaan se tallentaa kaik
 
 ## Toiminallisuus alkuvaiheessa
 -Elokuvien lisäys ja poisto, omien tietojen, kuten katsomispäivän ja oman arvion tallentaminen kuhunkin elokuvaan
+
 -Järjestä elokuvat listassa tietojen perusteella.
+
 -Elokuvien tietojen (esim. julkaisupäivä, ohjaaja ja arvioiden ka) automaattinen lisäys käyttäen esim. imdb:n apia.
+
 -Oma sivu yhteenvedoille käyttäen elokuvista noudettuja tilastoja
 
 ## Mahdollinen lisätoiminallisuus
 -Lisää tietoja elokuvista
+
 -Useita käyttäjiä
+
 -Ohjaajien ja näyttelijöiden perusteella etsiminen
+
 -Omien elokuvien rajaaminen parametrien, kuten julkaisuvuoden mukaan
