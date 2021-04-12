@@ -15,7 +15,7 @@ class DatabaseConnection:
             release_date TEXT NOT NULL,
             review INT);''')
 
-
+#for testing functionality
 if __name__ == "__main__":
     connection = DatabaseConnection()
     connection.create_table()

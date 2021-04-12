@@ -20,7 +20,7 @@ class IMDBSearch:
     def select_movie(self):
         for i in self.movie_list:
             print(i.index, i.title, i.release_date)
-        movie_selection = int(input("Which movie do you want to add? Press 0 if you don't want to add anything.\n"))
+        movie_selection = int(input("Add a movie by pressing the appropriate number. Press 0 if you don't want to add anything.\n"))
         if movie_selection == 0:
             return
         elif movie_selection > self.n:
@@ -36,7 +36,7 @@ class IMDBSearch:
         connection.conn.execute("INSERT INTO Movies (title, poster, imdb_id, release_date) \
             VALUES (?, ?, ?, ?)", [selected_movie.title, selected_movie.poster, selected_movie.id, selected_movie.release_date])            
 
-
+#for testing functionality
 if __name__ == "__main__":
     search = IMDBSearch()
     movie_name = input("Search: ")
