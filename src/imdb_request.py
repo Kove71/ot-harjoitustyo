@@ -1,6 +1,6 @@
 import requests
-import json
 from search_movie import SearchMovie
+from database_test import DatabaseConnection
 
 class IMDBSearch:
 
@@ -10,12 +10,12 @@ class IMDBSearch:
     def request_search(self, searchword: str):
         response = requests.get(self.url + searchword)
         search_result = response.json()    
-        self.results = search_result["results"]
-        n = len(self.results)
-        print(f"Movies found: {n}")
+        results = search_result["results"]
+        self.n = len(results)
+        print(f"Movies found: {self.n}")
         self.movie_list = []
-        for i in range(n):
-            self.movie_list.append(SearchMovie(self.results[i], i + 1))
+        for i in range(self.n):
+            self.movie_list.append(SearchMovie(results[i], i + 1))
     
     def select_movie(self):
         for i in self.movie_list:
@@ -23,18 +23,23 @@ class IMDBSearch:
         movie_selection = int(input("Which movie do you want to add? Press 0 if you don't want to add anything.\n"))
         if movie_selection == 0:
             return
-        elif movie_selection > len(self.movie_list):
+        elif movie_selection > self.n:
             print("No such movie is found on the list")
+            return
         else:
-            print("Movie selected: ")
+            print("Movie added: ")
             print(self.movie_list[movie_selection - 1].title, self.movie_list[movie_selection - 1].release_date)
-            
-
+            self.add_movie_to_database(self.movie_list[movie_selection - 1])
+    
+    def add_movie_to_database(self, selected_movie):
+        connection = DatabaseConnection()
+        connection.conn.execute("INSERT INTO Movies (title, poster, imdb_id, release_date) \
+            VALUES (?, ?, ?, ?)", [selected_movie.title, selected_movie.poster, selected_movie.id, selected_movie.release_date])            
 
 
 if __name__ == "__main__":
     search = IMDBSearch()
     movie_name = input("Search: ")
-    if len(movie_name) >1:
-        search.request_search(movie_name)   
+    search.request_search(movie_name)   
     search.select_movie()
+

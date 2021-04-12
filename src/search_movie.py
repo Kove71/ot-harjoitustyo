@@ -5,4 +5,5 @@ class SearchMovie:
         self.title = self.movie["title"]
         self.release_date = self.movie["description"]
         self.poster = self.movie["image"]
+        self.id = self.movie["id"]
         self.index = index
