@@ -28,13 +28,13 @@ Coverage-report luodaan komennolla:
 ```bash
 poetry run invoke coverage-report
 ```
-Tämän jälkeen juurihakemistosta löytyyy hakemisto htmlcov/, josta voi katsoa raportin.
+Tämän jälkeen juurihakemistosta löytyy hakemisto htmlcov/, josta voi katsoa raportin.
 
 ### Tiedetyt ongelmat
 
 Koska tämän viikon version tarkoitus on pääosin testata sqlite3:n ja IMDB-Apin toiminnallisuutta, vääränkaltaisia syötteitä ja virhetilanteita ei ole juuri otettu huomioon. Esim. kun ohjelma suoritetaan python shellistä, vain kirjaimet a-y ja numerot 0-9 toimivat. Backspace ja ääkköset tuottavat aina virheen. Tietokannan polku on myös suurinpiirtein kovakoodattu, jolloin ainoa tapa suorittaa ohjelma on silloin, kun working directory on juurihakemisto. poetry run invoke start -komento siis toimii, mutta jos haluaa suorittaa yksittäisä python-skriptejä src-hakemistosta, polku pitää manuaalisesti muuttaa config.py-tiedostossa. 
 
-Luokkarakenteet ja sovelluslogiikka on tällä hetkellä erittäin keskeneräistä. Koska tekstikäyttöliittymä on väliakainen se ei ole erkaantunut sovelluslogiikasta millään tavalla.
+Luokkarakenteet ja sovelluslogiikka ovat tällä hetkellä erittäin keskeneräisiä. Koska tekstikäyttöliittymä on väliakainen se ei ole erkaantunut sovelluslogiikasta millään tavalla.
 
 Api-kutsut ovat rajoittuneet 5000:n päivässä. On epätodennäköistä, että tämä tulisi täyteen, mutta kannattaa silti ottaa huomioon. Haku vie aina yhden api-kutsun ja testaus kolme.
 
