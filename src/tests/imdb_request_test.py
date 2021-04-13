@@ -1,6 +1,8 @@
 import unittest
 from imdb_search import IMDBSearch
 
+#Testaa toistaiseksi vain IMDBSearch-luokan request.search()-metodia
+
 class TestIMDBSearch(unittest.TestCase):
 
     def setUp(self):
