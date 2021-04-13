@@ -40,3 +40,7 @@ Luokkarakenteet ja sovelluslogiikka on tällä hetkellä erittäin keskeneräist
 
 - [Työaikakirja](./documentation/tyoaikakirja.md)
 - [Vaatimusmäärittely](./documentation/vaatimusmaarittely.md)
+
+## Python-versio
+
+Ohjelma on testattu Python-versioilla 3.6.9 ja 3.8.5. Ohjelman pitäisi pystyä toimimaan millä tahansa Pythonin versiolla joka on korkeampi kuin 3.6.0. 
