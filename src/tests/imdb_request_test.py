@@ -9,7 +9,7 @@ class TestIMDBSearch(unittest.TestCase):
         self.search = IMDBSearch()
 
     def test_search_with_searchword(self):
-        self.assertEqual(self.search.request_search("up"), True)
+        self.assertEqual(self.search.request_search("salo"), True)
     
     def test_search_without_searchword(self):
         self.assertEqual(self.search.request_search(""), False)
