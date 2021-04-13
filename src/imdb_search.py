@@ -8,6 +8,8 @@ class IMDBSearch:
         self.url = "https://imdb-api.com/en/API/SearchMovie/k_grjsr7l7/"
 
     def request_search(self, searchword: str):
+        if len(searchword) == 0:
+            return False
         response = requests.get(self.url + searchword)
         search_result = response.json()    
         results = search_result["results"]
@@ -16,6 +18,10 @@ class IMDBSearch:
         self.movie_list = []
         for i in range(self.n):
             self.movie_list.append(SearchMovie(results[i], i + 1))
+        if self.n > 0:
+            return True
+        else:
+            return False
     
     def select_movie(self):
         for i in self.movie_list:
@@ -36,10 +42,13 @@ class IMDBSearch:
         connection.conn.execute("INSERT INTO Movies (title, poster, imdb_id, release_date) \
             VALUES (?, ?, ?, ?)", [selected_movie.title, selected_movie.poster, selected_movie.id, selected_movie.release_date])            
 
-#for testing functionality
+#Tämän osan testaukseen. Sama rakenne kuin movie_application.py. 
 if __name__ == "__main__":
     search = IMDBSearch()
-    movie_name = input("Search: ")
-    search.request_search(movie_name)   
-    search.select_movie()
-
+    while True:
+        searchword = input("Search movie title: ")
+        if search.request_search(searchword):
+            search.select_movie()
+            break
+        else:
+            print("Error when making search")

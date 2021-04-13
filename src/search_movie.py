@@ -1,3 +1,5 @@
+#Luokka hakutulosten elokuville.
+
 class SearchMovie:
 
     def __init__(self, movie: dict, index: int):
