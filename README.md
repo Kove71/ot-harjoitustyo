@@ -36,7 +36,7 @@ Koska tämän viikon version tarkoitus on pääosin testata sqlite3:n ja IMDB-Ap
 
 Luokkarakenteet ja sovelluslogiikka on tällä hetkellä erittäin keskeneräistä. Koska tekstikäyttöliittymä on väliakainen se ei ole erkaantunut sovelluslogiikasta millään tavalla.
 
-Api-kutsut ovat rajoittuneet 5000:n päivässä. On epätodennäköistä, että tämä tulisis täyteen, mutta kannattaa silti ottaa huomioon. Haku vie aina yhden api-kutsun ja testaus kolme.
+Api-kutsut ovat rajoittuneet 5000:n päivässä. On epätodennäköistä, että tämä tulisi täyteen, mutta kannattaa silti ottaa huomioon. Haku vie aina yhden api-kutsun ja testaus kolme.
 
 ## Dokumentaatio
 
