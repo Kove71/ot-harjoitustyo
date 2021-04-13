@@ -12,3 +12,5 @@ class TestIMDBSearch(unittest.TestCase):
     def test_search_without_searchword(self):
         self.assertEqual(self.search.request_search(""), False)
 
+    def test_search_with_zero_results(self):
+        self.assertEqual(self.search.request_search("zibazubazei"), False)
