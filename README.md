@@ -1,5 +1,7 @@
 # Ohjelmistotekniikka, harjoitustyö
 
+Harjoitustyö on elokuvien kirjallapito-sovellus. Käyttäjä voi etsiä elokuvia ja lisätä niitä tietokantaan. Elokuvien tiedoista löytyy esim. ohjaaja, julkaisupäivä ja imdb-rating. Halutessaan käyttäjä voi myös lisätä oman arvostelun ja katsomispäivän elokuvan tietoihin. Käyttäjä pystyy selaamaan katsomiaan elokuvian ja järjestelemään niitä niiden tietojen mukaan. 
+
 ## Nykyinen versio
 
 Tämänhetkisen version tarkoitus on täyttää ensimmäisen viikon vaatimukset.
@@ -36,5 +38,5 @@ Luokkarakenteet ja sovelluslogiikka on tällä hetkellä erittäin keskeneräist
 
 ## Dokumentaatio
 
--
--
+- [Työaikakirja](./documentation/tyoaikakirja.md)
+- [Vaatimusmäärittely](./documentation/vaatimusmaarittely.md)
