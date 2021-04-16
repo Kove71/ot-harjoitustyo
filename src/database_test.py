@@ -17,10 +17,15 @@ class DatabaseConnection:
         self.conn.execute('''CREATE TABLE if not exists Movies
             (id INTEGER PRIMARY KEY,
             title TEXT NOT NULL,
-            poster TEXT NOT NULL,
-            imdb_id TEXT NOT NULL,
-            release_date TEXT NOT NULL,
-            review INT);''')
+            poster TEXT,
+            imdb_id TEXT,
+            release_date TEXT,
+            avg_rating TEXT,
+            director TEXT,
+            length TEXT,
+            length_mins INTEGER,
+            review INT,
+            watched TEXT);''')
 
 #Tämän osan testaukseen
 if __name__ == "__main__":
