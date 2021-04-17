@@ -5,7 +5,7 @@ import os, sys
 p = os.path.abspath('.')
 sys.path.insert(1, p)
 
-from search_movie import SearchMovie
+from entities.movie_items import SearchMovie
 
 class SearchModel(QtCore.QAbstractListModel):
 

@@ -11,13 +11,12 @@ from PyQt5.QtWidgets import (
 )   
 from PyQt5.QtCore import Qt, QSize
 import PyQt5.QtGui as Gui
-
 import os, sys
 
 p = os.path.abspath('.')
 sys.path.insert(1, p)
 
-from imdb_search import IMDBSearch
+from services.imdb_api import IMDBSearch
 from search_result_model import SearchModel
 
 class MainWindow(QMainWindow):

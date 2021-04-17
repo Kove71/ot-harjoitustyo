@@ -1,6 +1,9 @@
 import requests
-from search_movie import SearchMovie, MovieDetails
-from database_test import DatabaseConnection
+import os, sys
+p = os.path.abspath('.')
+sys.path.insert(1, p)
+from entities.movie_items import SearchMovie, MovieDetails
+from database_connection import get_connection
 
 # Luokka on vastuussa api-kutsuista. Tällä hetkellä ainoa api-kutsu on imdb-apin SearchMovie, joka palauttaa sopivat elokuvat.
 # Sovelluslogiikkaassa on tällä hetkellä sekaisin myös käyttöliittymän toiminnallisuutta. Ne lähtevät asap pois, kunhan saan guin käyntiin.
@@ -39,8 +42,8 @@ class IMDBSearch:
     #Lisää valitun elokuvan tietokantaan.
     
     def add_movie_to_database(self, selected_movie):
-        connection = DatabaseConnection()
-        connection.conn.execute("INSERT INTO Movies (title, poster, imdb_id, release_date, director, avg_rating, length, length_mins) \
+        conn = get_connection()
+        conn.execute("INSERT INTO Movies (title, poster, imdb_id, release_date, director, avg_rating, length, length_mins) \
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [selected_movie.title, 
             selected_movie.poster, 
             selected_movie.id, 
@@ -51,13 +54,3 @@ class IMDBSearch:
             selected_movie.length_mins
             ])            
 
-#Tämän osan testaukseen. Sama rakenne kuin movie_application.py. 
-if __name__ == "__main__":
-    search = IMDBSearch()
-    while True:
-        searchword = input("Search movie title: ")
-        if search.request_search(searchword):
-            search.select_movie()
-            break
-        else:
-            print("Error when making search")
