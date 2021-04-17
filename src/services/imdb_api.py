@@ -3,8 +3,7 @@ import os, sys
 p = os.path.abspath('.')
 sys.path.insert(1, p)
 from entities.movie_items import SearchMovie, MovieDetails
-from database_connection import get_connection
-
+from database_actions import DatabaseActions
 # Luokka on vastuussa api-kutsuista. Tällä hetkellä ainoa api-kutsu on imdb-apin SearchMovie, joka palauttaa sopivat elokuvat.
 # Sovelluslogiikkaassa on tällä hetkellä sekaisin myös käyttöliittymän toiminnallisuutta. Ne lähtevät asap pois, kunhan saan guin käyntiin.
 #
@@ -37,20 +36,7 @@ class IMDBSearch:
         response = requests.get(self.title_url + title)
         result = response.json()
         movie_item = MovieDetails(result)
-        self.add_movie_to_database(movie_item)
+        db = DatabaseActions()
+        if db.add_movie_to_database(movie_item):
+            return True
     
-    #Lisää valitun elokuvan tietokantaan.
-    
-    def add_movie_to_database(self, selected_movie):
-        conn = get_connection()
-        conn.execute("INSERT INTO Movies (title, poster, imdb_id, release_date, director, avg_rating, length, length_mins) \
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [selected_movie.title, 
-            selected_movie.poster, 
-            selected_movie.id, 
-            selected_movie.release_date, 
-            selected_movie.director,
-            selected_movie.avg_rating,
-            selected_movie.length,
-            selected_movie.length_mins
-            ])            
-

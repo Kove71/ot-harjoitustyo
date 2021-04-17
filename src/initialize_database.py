@@ -20,7 +20,7 @@ class DatabaseInit:
             release_date TEXT,
             avg_rating TEXT,
             director TEXT,
-            length TEXT,
+            length TEXT,git
             length_mins INTEGER,
             review INT,
             watched TEXT);''')

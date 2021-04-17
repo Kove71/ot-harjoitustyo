@@ -17,7 +17,7 @@ p = os.path.abspath('.')
 sys.path.insert(1, p)
 
 from services.imdb_api import IMDBSearch
-from search_result_model import SearchModel
+from ui.search_result_model import SearchModel
 
 class MainWindow(QMainWindow):
 
@@ -33,6 +33,7 @@ class MainWindow(QMainWindow):
         self.search_entry = QLineEdit()
         self.search_entry.setPlaceholderText("Search movie title")
         self.label = QLabel("Movies found: 0")
+        self.movie_added_label = QLabel("")
         self.model = SearchModel()
         self.search_view = QListView()
         self.search_view.setModel(self.model)
@@ -48,6 +49,7 @@ class MainWindow(QMainWindow):
         parent_layout.addWidget(self.label)
         parent_layout.addWidget(self.search_view)
         parent_layout.addWidget(self.add_movie_button)
+        parent_layout.addWidget(self.movie_added_label)
         search_bar_layout.addWidget(self.search_entry)
         search_bar_layout.addWidget(self.search_button)
         container = QWidget()
@@ -56,6 +58,7 @@ class MainWindow(QMainWindow):
 
     def search_button_clicked(self):
         text = self.search_entry.text()
+        text.strip()
         search = IMDBSearch()
         self.search_results = search.request_search(text)
         self.label.setText(f"Movies found: {search.n}")
@@ -66,7 +69,8 @@ class MainWindow(QMainWindow):
     def add_movie_clicked(self):
         index = self.search_view.selectedIndexes()[0].row()
         api = IMDBSearch()
-        api.request_title(self.search_results[index].id)
+        if api.request_title(self.search_results[index].id):
+            self.movie_added_label.setText("Movie added!")
             
 
  

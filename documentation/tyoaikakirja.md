@@ -6,4 +6,7 @@
 | 12.4. | 4    | Ensimmäisen version koodaminen, tietokannan ja apin testaus. Periatteessa toiminnollisen ohjelman luonti|
 | 13.4. | 5    | Testaus ja coverage. README.md päivitetty ja ensimmäisen viikon julkaisu valmistunut. Testattu laitoksen koneella|
 | 14.4  | 2    | Tutustuminen käyttöliittymämoduleihin tkinter ja pyqt5 |
-| yht   | 14   | |
+| 15.4  | 5    | Käyttöliittymän implementoinnin aloitus |
+| 16.4  | 4    | Ensimmäisen viikon toiminallisuus käyttöliittymässä |
+| 17.4  | 2    | Koodin siivousta |
+| yht   | 25   | |
