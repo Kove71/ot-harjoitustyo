@@ -9,4 +9,5 @@
 | 15.4  | 5    | Käyttöliittymän implementoinnin aloitus |
 | 16.4  | 4    | Ensimmäisen viikon toiminallisuus käyttöliittymässä |
 | 17.4  | 2    | Koodin siivousta |
-| yht   | 25   | |
+| 18.4  | 2    | Pylint ja koodin refaktorointi, invoke korjattu |
+| yht   | 27   | |
