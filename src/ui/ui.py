@@ -1,31 +1,31 @@
-from PyQt5.QtWidgets import (
-    QApplication, 
-    QMainWindow, 
-    QLabel, 
-    QPushButton, 
-    QLineEdit,
-    QHBoxLayout, 
-    QWidget, 
-    QVBoxLayout,
-    QListView
-)   
-from PyQt5.QtCore import Qt, QSize
-import PyQt5.QtGui as Gui
-import os, sys
-
+import os
+import sys
 p = os.path.abspath('.')
 sys.path.insert(1, p)
 
-from services.imdb_api import IMDBSearch
-from ui.search_result_model import SearchModel
+from PyQt5.QtWidgets import ( # pylint: disable=no-name-in-module
+    QApplication,
+    QMainWindow,
+    QLabel,
+    QPushButton,
+    QLineEdit,
+    QHBoxLayout,
+    QWidget,
+    QVBoxLayout,
+    QListView
+)
+
+from services.imdb_api import IMDBSearch # pylint: disable=wrong-import-position
+from ui.search_result_model import SearchModel # pylint: disable=wrong-import-position
 
 class MainWindow(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.setupUI()
+        self.search_results = []
+        self.setup_ui()
 
-    def setupUI(self):
+    def setup_ui(self):
         self.setWindowTitle("Movie Application")
         self.search_button = QPushButton("Search")
         self.add_movie_button = QPushButton("Add movie")
@@ -39,10 +39,9 @@ class MainWindow(QMainWindow):
         self.search_view.setModel(self.model)
         self.search_button.clicked.connect(self.search_button_clicked)
         self.add_movie_button.clicked.connect(self.add_movie_clicked)
-        self.setupLayout()
-    
-    def setupLayout(self):
-        
+        self.setup_layout()
+
+    def setup_layout(self):
         parent_layout = QVBoxLayout()
         search_bar_layout = QHBoxLayout()
         parent_layout.addLayout(search_bar_layout)
@@ -60,8 +59,9 @@ class MainWindow(QMainWindow):
         text = self.search_entry.text()
         text.strip()
         search = IMDBSearch()
+        self.movie_added_label.setText("")
         self.search_results = search.request_search(text)
-        self.label.setText(f"Movies found: {search.n}")
+        self.label.setText(f"Movies found: {search.result_length}")
         self.model.movie_list = self.search_results
         self.model.layoutChanged.emit()
         self.add_movie_button.setEnabled(True)
@@ -71,9 +71,6 @@ class MainWindow(QMainWindow):
         api = IMDBSearch()
         if api.request_title(self.search_results[index].id):
             self.movie_added_label.setText("Movie added!")
-            
-
- 
 
 
 if __name__ == "__main__":

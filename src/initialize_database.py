@@ -1,18 +1,12 @@
-import sqlite3
 from database_connection import get_connection
 
-class DatabaseInit:
+conn = get_connection()
 
-    def __init__(self):
-        self.conn = get_connection()
-        self.drop_table()
+def drop_table():
+    conn.execute("DROP TABLE if exists Movies")
 
-    def drop_table(self):
-        self.conn.execute("DROP TABLE if exists Movies")
-        self.create_table()
-
-    def create_table(self):
-        self.conn.execute('''CREATE TABLE if not exists Movies
+def create_table():
+    conn.execute('''CREATE TABLE if not exists Movies
             (id INTEGER PRIMARY KEY,
             title TEXT NOT NULL,
             poster TEXT,
@@ -24,3 +18,8 @@ class DatabaseInit:
             length_mins INTEGER,
             review INT,
             watched TEXT);''')
+
+if __name__ == "__main__":
+
+    drop_table()
+    create_table()

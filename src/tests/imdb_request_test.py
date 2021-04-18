@@ -1,5 +1,5 @@
 import unittest
-from imdb_search import IMDBSearch
+from services.imdb_api import IMDBSearch
 
 #Testaa toistaiseksi vain IMDBSearch-luokan request.search()-metodia
 
@@ -10,7 +10,7 @@ class TestIMDBSearch(unittest.TestCase):
 
     def test_search_with_searchword(self):
         self.assertEqual(self.search.request_search("salo"), True)
-    
+
     def test_search_without_searchword(self):
         self.assertEqual(self.search.request_search(""), False)
 

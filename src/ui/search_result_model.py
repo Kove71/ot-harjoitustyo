@@ -1,11 +1,11 @@
-from PyQt5 import QtCore, QtWidgets, QtGui
-from PyQt5.QtCore import Qt
-import os, sys
-
+import os
+import sys
 p = os.path.abspath('.')
 sys.path.insert(1, p)
 
-from entities.movie_items import SearchMovie
+from PyQt5 import QtCore
+from PyQt5.QtCore import Qt
+
 
 class SearchModel(QtCore.QAbstractListModel):
 
@@ -14,11 +14,10 @@ class SearchModel(QtCore.QAbstractListModel):
         self.movie_list = movie_list
 
     def data(self, index, role):
-
         if role == Qt.DisplayRole:
-            text = self.movie_list[index.row()].title + " " + self.movie_list[index.row()].description
+            text = self.movie_list[index.row()].title \
+                + " " + self.movie_list[index.row()].description
             return text
 
     def rowCount(self, index):
         return len(self.movie_list)
-
