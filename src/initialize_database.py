@@ -14,7 +14,7 @@ def create_table():
             release_date TEXT,
             avg_rating TEXT,
             director TEXT,
-            length TEXT,git
+            length TEXT,
             length_mins INTEGER,
             review INT,
             watched TEXT);''')

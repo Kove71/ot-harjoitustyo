@@ -1,4 +1,4 @@
-from invoke import task 
+from invoke import task
 
 @task
 def start(ctx):
@@ -15,3 +15,11 @@ def coverage(ctx):
 @task(coverage)
 def coverage_report(ctx):
     ctx.run("coverage html")
+
+@task
+def lint(ctx):
+    ctx.run("pylint src")
+
+@task
+def build(ctx):
+    ctx.run("python3 src/initialize_database.py")
