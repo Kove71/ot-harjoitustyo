@@ -19,6 +19,7 @@ class IMDBSearch:
 
     def request_search(self, searchword: str):
         if len(searchword) == 0:
+            self.movie_list = []
             return self.movie_list
         response = requests.get(self.search_url + searchword)
         search_result = response.json()
