@@ -4,17 +4,21 @@ Harjoitustyö on elokuvien kirjallapito-sovellus. Käyttäjä voi etsiä elokuvi
 
 ## Nykyinen versio
 
-Tämänhetkisen version tarkoitus on täyttää ensimmäisen viikon vaatimukset.
+Tämänhetkisen version tarkoitus on täyttää toisen viikon vaatimukset.
 
 ### Toiminnallisuus
 
-Tämänhetkisen version ensisijainen tarkoitus on testata IMDB-Apin toiminnallisuutta. Ohjelmassa voi etsiä elokuvan nimen mukaan IMDB:stä elokuvia, mikä antaa hakutuloksena parhaimmin vastaavat elokuvat. Käyttäjä voi lisätä halutessaan jonkun näistä elokuvista tietokantaan, jossa säilytetään tietoja valituista elokuvista. Ohjelman sisällä ei ole vielä mahdollisuutta tutkia tietokannan sisältöä, mutta se on toiminnallinen. Sen sisältöä voi tutkia esim. DB Browser for SQLite -ohjelmalla. Tietokanta löytyy /data/-hakemistosta ensimmäisen ohjelman suorituksen jälkeen. Ohjelmaa käytetään (väliaikaisella) tekstikäyttöliittymällä. 
+Tämänhetkisessä versiossa on implentoitu käyttöliittymä, jonka avulla käyttäjä pystyy hakemaan elokuvia elokuvan nimen perusteella. Ohjelma palauttaa listaan parhaiten osuvat elokuvat ja käyttäjä voi lisätä haluamansa elokuvat omaan tietokantaan, johon tallenetaan elokuvan tiedot.
 
 ### Käyttöohje
 
 Ennen ensimmäistä käyttökertaa riippuvuudet tulee asentaa komennolla: 
 ```bash
 poetry install
+```
+Ohjelma tulee myös alustaa ennen ensimmäistä käyttökertaa komennolla:
+```bash
+poetry run invoke build
 ```
 Ohjelma suoritetaan komennolla:
 ```bash
@@ -32,9 +36,7 @@ Tämän jälkeen juurihakemistosta löytyy hakemisto htmlcov/, josta voi katsoa 
 
 ### Tiedetyt ongelmat
 
-Koska tämän viikon version tarkoitus on pääosin testata sqlite3:n ja IMDB-Apin toiminnallisuutta, vääränkaltaisia syötteitä ja virhetilanteita ei ole juuri otettu huomioon. Esim. kun ohjelma suoritetaan python shellistä, vain kirjaimet a-y ja numerot 0-9 toimivat. Backspace ja ääkköset tuottavat aina virheen. Tietokannan polku on myös suurinpiirtein kovakoodattu, jolloin ainoa tapa suorittaa ohjelma on silloin, kun working directory on juurihakemisto. poetry run invoke start -komento siis toimii, mutta jos haluaa suorittaa yksittäisä python-skriptejä src-hakemistosta, polku pitää manuaalisesti muuttaa config.py-tiedostossa. 
-
-Luokkarakenteet ja sovelluslogiikka ovat tällä hetkellä erittäin keskeneräisiä. Koska tekstikäyttöliittymä on väliakainen se ei ole erkaantunut sovelluslogiikasta millään tavalla.
+Virhetilanteet ovat edelleen huonosti käsiteltyjä, eli ohjelma pääosin olettaa kaiken toimivan hyvin ja käyttäjän olevan järkevä. Esim. jos koittaa lisätä elokuvan silloin, kun mitään ei ole valittuna, ohjelma tuottaa virheen.
 
 Api-kutsut ovat rajoittuneet 5000:n päivässä. On epätodennäköistä, että tämä tulisi täyteen, mutta kannattaa silti ottaa huomioon. Haku vie aina yhden api-kutsun ja testaus kolme.
 
@@ -46,3 +48,7 @@ Api-kutsut ovat rajoittuneet 5000:n päivässä. On epätodennäköistä, että 
 ## Python-versio
 
 Ohjelma on testattu Python-versioilla 3.6.9 ja 3.8.5. Ohjelman pitäisi pystyä toimimaan millä tahansa Pythonin versiolla joka on korkeampi kuin 3.6.0. 
+
+## Huomioita pylintistä
+
+Pylint ei jostain syystä löydä PyQt5 kirjastoja, joten olen laittanut näistä johtuvat ongelmat pois päältä. Samaten pylint tuottaa ongelmia kun muokkaan sys.pathia, jotta löytäisin omat moduulit, joten sekin on laitettu pois. Sen lisäksi ui/search_result_model.py on pyqt5:n oma luokkarakenne, jonka avulla voi käyttää QListView-luokkaa. Tämän takia se ei ole pep8 standardien mukainen. 
