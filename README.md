@@ -38,6 +38,8 @@ Tämän jälkeen juurihakemistosta löytyy hakemisto htmlcov/, josta voi katsoa 
 
 Virhetilanteet ovat edelleen huonosti käsiteltyjä, eli ohjelma pääosin olettaa kaiken toimivan hyvin ja käyttäjän olevan järkevä. Esim. jos koittaa lisätä elokuvan silloin, kun mitään ei ole valittuna, ohjelma tuottaa virheen. Jos haluaa tutkia tietokannan sisältöä pitää ne katsoa manuaalisesti haluamallaan ohjelmalla.
 
+Etätyöpöydällä tietokanta ei toimi (locked), mutta käyttöliittymä toimii, ja ssh-melkillä tietokanta toimii, mutta käyttöliittymä ei.
+
 Api-kutsut ovat rajoittuneet 5000:n päivässä. On epätodennäköistä, että tämä tulisi täyteen, mutta kannattaa silti ottaa huomioon. Haku vie aina yhden api-kutsun ja testaus kolme.
 
 ## Dokumentaatio
