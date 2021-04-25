@@ -2,7 +2,7 @@ import sys
 from PyQt5 import QtCore
 from PyQt5.QtCore import Qt
 
-class TableModel(QtCore.AbstractTableModel):
+class TableModel(QtCore.QAbstractTableModel):
 
     def __init__(self, data):
         super().__init__()

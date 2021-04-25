@@ -12,4 +12,7 @@
 | 18.4  | 2    | Pylint ja koodin refaktorointi, invoke korjattu |
 | 19.4  | 2    | Testausta |
 | 20.4  | 1    | Arkkitehtuuri-hommat |
-| yht   | 30   | |
+| 23.4  | 4    | Tutustuminen pyqt5:n eri tietokantarajapintoihin |
+| 24.4  | 3    | Tutustuminen pyqt5:n TabWidget-luokkaan ja käyttöliittymärakenteen suunnittelu |
+| 25.5  | 7    | Koodin refaktorointia ja implementoitu TabWidget, jolloin käyttöliittymässä voi olla useampi näkymä |
+| yht   | 44   | |
