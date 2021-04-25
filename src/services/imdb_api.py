@@ -6,7 +6,7 @@ sys.path.insert(1, p)
 import requests # pylint: disable=wrong-import-position
 
 from entities.movie_items import SearchMovie, MovieDetails # pylint: disable=wrong-import-position
-from database_actions import DatabaseActions # pylint: disable=wrong-import-position
+from repositories.database_actions import DatabaseActions # pylint: disable=wrong-import-position
 
 
 class IMDBSearch:
@@ -35,4 +35,5 @@ class IMDBSearch:
         result = response.json()
         movie_item = MovieDetails(result)
         database = DatabaseActions()
+        database.select_movies()
         return database.add_movie_to_database(movie_item)

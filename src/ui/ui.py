@@ -71,6 +71,7 @@ class MainWindow(QMainWindow):
         api = IMDBSearch()
         if api.request_title(self.search_results[index].id):
             self.movie_added_label.setText("Movie added!")
+            
 
 
 if __name__ == "__main__":

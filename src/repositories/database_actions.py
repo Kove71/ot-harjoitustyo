@@ -1,9 +1,15 @@
+import os
+import sys
+p = os.path.abspath('.')
+sys.path.insert(1, p)
+
 from database_connection import get_connection
 
 class DatabaseActions:
 
     def __init__(self):
         self.conn = get_connection()
+        self.cur = self.conn.cursor()
 
 
     def add_movie_to_database(self, selected_movie):
@@ -16,3 +22,9 @@ class DatabaseActions:
                 selected_movie.length, selected_movie.length_mins])
 
         return True
+
+    def select_movies(self):
+        self.cur.execute("SELECT * FROM Movies")
+        rows = self.cur
+        for row in rows:
+            print(row)
