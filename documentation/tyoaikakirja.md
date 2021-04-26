@@ -15,4 +15,5 @@
 | 23.4  | 4    | Tutustuminen pyqt5:n eri tietokantarajapintoihin |
 | 24.4  | 3    | Tutustuminen pyqt5:n TabWidget-luokkaan ja käyttöliittymärakenteen suunnittelu |
 | 25.5  | 7    | Koodin refaktorointia ja implementoitu TabWidget, jolloin käyttöliittymässä voi olla useampi näkymä |
-| yht   | 44   | |
+| 26.6  | 5    | Implementoitu käyttöliittymä tietokannalle |
+| yht   | 49   | |
