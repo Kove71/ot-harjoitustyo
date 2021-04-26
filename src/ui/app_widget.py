@@ -39,8 +39,7 @@ class ApplicationWidget(QWidget):
         self.setup_database_ui()
 
         self.layout.addWidget(self.tabs)
-        self.setLayout(self.layout)
-    
+        self.setLayout(self.layout)    
 
     def setup_search_ui(self):
         self.search_button = QPushButton("Search")

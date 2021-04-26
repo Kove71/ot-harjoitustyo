@@ -11,7 +11,6 @@ class DatabaseActions:
         self.conn = get_connection()
         self.cur = self.conn.cursor()
 
-
     def add_movie_to_database(self, selected_movie):
         self.conn.execute("INSERT INTO Movies \
             (title, poster, imdb_id, release_date, director, avg_rating, length, length_mins) \
@@ -24,7 +23,8 @@ class DatabaseActions:
         return True
 
     def select_movies(self):
-        self.cur.execute("SELECT * FROM Movies")
+        self.cur.execute("SELECT title, release_date, director, \
+            avg_rating, length, review, watched FROM Movies")
         rows = self.cur
         movies = []
         for row in rows:
