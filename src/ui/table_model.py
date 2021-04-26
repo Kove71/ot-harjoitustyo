@@ -6,15 +6,15 @@ class TableModel(QtCore.QAbstractTableModel):
 
     def __init__(self, data):
         super().__init__()
-        self._data = data
+        self.movie_data = data
     
     def data(self, index, role):
         if role == Qt.DisplayRole:
-            return self._data[index.row()][index.column()]
+            return self.movie_data[index.row()][index.column()]
         
     def rowCount(self, index):
-        return len(self._data)
+        return len(self.movie_data)
     
     def columnCount(self, index):
-        return len(self._data[0])
+        return len(self.movie_data[0])
     

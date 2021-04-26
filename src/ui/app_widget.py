@@ -82,12 +82,23 @@ class ApplicationWidget(QWidget):
         self.add_movie_button.setEnabled(True)
 
     def add_movie_clicked(self):
-        index = self.search_view.selectedIndexes()[0].row()
-        api = IMDBSearch()
-        if api.request_title(self.search_results[index].id):
-            self.movie_added_label.setText("Movie added!")
-            
-
-
+        if len(self.search_view.selectedIndexes()) > 0:
+            index = self.search_view.selectedIndexes()[0].row()
+            api = IMDBSearch()
+            if api.request_title(self.search_results[index].id):
+                self.movie_added_label.setText("Movie added!")
+            database = DatabaseActions()
+            self.table_model.movie_data = database.select_movies()
+            self.table_model.layoutChanged.emit()
+                
     def setup_database_ui(self):
-        pass
+        database = DatabaseActions()
+        self.table_model = TableModel(database.select_movies())
+        self.table_view = QTableView()
+        self.table_view.setModel(self.table_model)
+        self.setup_database_layout()
+    
+    def setup_database_layout(self):
+        self.database_tab.layout = QVBoxLayout()
+        self.database_tab.layout.addWidget(self.table_view)
+        self.database_tab.setLayout(self.database_tab.layout)

@@ -26,5 +26,7 @@ class DatabaseActions:
     def select_movies(self):
         self.cur.execute("SELECT * FROM Movies")
         rows = self.cur
+        movies = []
         for row in rows:
-            print(row)
+            movies.append(row)
+        return movies
