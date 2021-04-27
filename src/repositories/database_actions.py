@@ -3,7 +3,7 @@ import sys
 p = os.path.abspath('.')
 sys.path.insert(1, p)
 
-from database_connection import get_connection
+from database_connection import get_connection #pylint: disable=wrong-import-position
 
 class DatabaseActions:
 
