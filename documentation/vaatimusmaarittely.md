@@ -10,7 +10,9 @@ Alkuvaiheessa sovelluksessa ei tule olemaan käyttäjiä, vaan se tallentaa kaik
 
 -Järjestä elokuvat listassa tietojen perusteella.
 
--Elokuvien tietojen (esim. julkaisupäivä, ohjaaja ja arvioiden ka) automaattinen lisäys käyttäen esim. imdb:n apia.
+-Elokuvien tietojen (esim. julkaisupäivä, ohjaaja ja arvioiden ka) automaattinen lisäys käyttäen esim. imdb:n apia. *(tehty)*
+
+-Käyttöliittymä tietokannan selaamiseen *(tehty)*
 
 -Oma sivu yhteenvedoille käyttäen elokuvista noudettuja tilastoja
 
