@@ -4,11 +4,11 @@ Harjoitustyö on elokuvien kirjallapito-sovellus. Käyttäjä voi etsiä elokuvi
 
 ## Nykyinen versio
 
-Tämänhetkisen version tarkoitus on täyttää toisen viikon vaatimukset.
+Tämänhetkisen version tarkoitus on täyttää kolmannen viikon vaatimukset.
 
 ### Toiminnallisuus
 
-Tämänhetkisessä versiossa on implentoitu käyttöliittymä, jonka avulla käyttäjä pystyy hakemaan elokuvia elokuvan nimen perusteella. Ohjelma palauttaa listaan parhaiten osuvat elokuvat ja käyttäjä voi lisätä haluamansa elokuvat omaan tietokantaan, johon tallenetaan elokuvan tiedot.
+Tämänhetkisessä versiossa on implentoitu käyttöliittymä, jonka avulla käyttäjä pystyy hakemaan elokuvia elokuvan nimen perusteella. Ohjelma palauttaa listaan parhaiten osuvat elokuvat ja käyttäjä voi lisätä haluamansa elokuvat omaan tietokantaan, johon tallenetaan elokuvan tiedot. Käyttäjä voi selata lisäämiään elokuvia käyttöliittymän kautta
 
 ### Käyttöohje
 
@@ -36,7 +36,7 @@ Tämän jälkeen juurihakemistosta löytyy hakemisto htmlcov/, josta voi katsoa 
 
 ### Tiedetyt ongelmat
 
-Virhetilanteet ovat edelleen huonosti käsiteltyjä, eli ohjelma pääosin olettaa kaiken toimivan hyvin ja käyttäjän olevan järkevä. Esim. jos koittaa lisätä elokuvan silloin, kun mitään ei ole valittuna, ohjelma tuottaa virheen. Jos haluaa tutkia tietokannan sisältöä pitää ne katsoa manuaalisesti haluamallaan ohjelmalla.
+Virhetilanteet ovat edelleen huonosti käsiteltyjä, eli ohjelma pääosin olettaa kaiken toimivan hyvin ja käyttäjän olevan järkevä. Tietokannan tutkiminen on vielä alkuvaiheessa. Kolumnit eivät ole nimettyjä eikä tietokantaa pysty järjestämään tai editoida.
 
 Etätyöpöydällä tietokanta ei toimi (locked), mutta käyttöliittymä toimii, ja ssh-melkillä tietokanta toimii, mutta käyttöliittymä ei.
 
@@ -54,4 +54,8 @@ Ohjelma on testattu Python-versioilla 3.6.9 ja 3.8.5. Ohjelman pitäisi pystyä 
 
 ## Huomioita pylintistä
 
-Pylint ei jostain syystä löydä PyQt5 kirjastoja, joten olen laittanut näistä johtuvat ongelmat pois päältä. Samaten pylint tuottaa ongelmia kun muokkaan sys.pathia, jotta löytäisin omat moduulit, joten sekin on laitettu pois. Sen lisäksi ui/search_result_model.py on pyqt5:n oma luokkarakenne, jonka avulla voi käyttää QListView-luokkaa. Tämän takia se ei ole pep8 standardien mukainen. 
+Pylint tuottaa ongelmia kun muokkaan sys.pathia, jotta löytäisin omat moduulit, joten se on laitettu pois. Käyttöliittymäkoodia ei testata, sillä PyQt5 tuottaa paljon ongelmia pylintissä. 
+
+## Viimeisin release
+
+
