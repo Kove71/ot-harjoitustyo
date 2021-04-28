@@ -17,6 +17,8 @@ from PyQt5.QtWidgets import ( # pylint: disable=no-name-in-module
     QTabWidget
 )
 
+from PyQt5.QtCore import Qt
+
 from services.imdb_api import IMDBSearch # pylint: disable=wrong-import-position
 from ui.table_model import TableModel # pylint: disable=wrong-import-position
 from ui.search_result_model import SearchModel
@@ -95,9 +97,15 @@ class ApplicationWidget(QWidget):
         self.table_model = TableModel(database.select_movies())
         self.table_view = QTableView()
         self.table_view.setModel(self.table_model)
+        self.edit_button = QPushButton("Edit")
+        self.remove_button = QPushButton("Remove")
         self.setup_database_layout()
     
     def setup_database_layout(self):
         self.database_tab.layout = QVBoxLayout()
+        table_button_layout = QHBoxLayout()
         self.database_tab.layout.addWidget(self.table_view)
+        table_button_layout.addWidget(self.edit_button, alignment=Qt.AlignLeft)
+        table_button_layout.addWidget(self.remove_button, alignment=Qt.AlignRight)
+        self.database_tab.layout.addLayout(table_button_layout)
         self.database_tab.setLayout(self.database_tab.layout)

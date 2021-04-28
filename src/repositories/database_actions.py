@@ -3,12 +3,15 @@ import sys
 p = os.path.abspath('.')
 sys.path.insert(1, p)
 
-from database_connection import get_connection #pylint: disable=wrong-import-position
+from database_connection import get_connection, get_test_connection #pylint: disable=wrong-import-position
 
 class DatabaseActions:
 
-    def __init__(self):
-        self.conn = get_connection()
+    def __init__(self, test = False):
+        if test:
+            self.conn = get_test_connection()
+        else:
+            self.conn = get_connection()
         self.cur = self.conn.cursor()
 
     def add_movie_to_database(self, selected_movie):
