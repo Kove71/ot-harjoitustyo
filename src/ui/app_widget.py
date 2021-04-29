@@ -14,9 +14,10 @@ from PyQt5.QtWidgets import ( # pylint: disable=no-name-in-module
     QVBoxLayout,
     QTableView,
     QListView,
+    QAbstractItemView,
     QTabWidget
 )
-
+from PyQt5 import QtCore
 from PyQt5.QtCore import Qt
 
 from services.imdb_api import IMDBSearch # pylint: disable=wrong-import-position
@@ -96,9 +97,16 @@ class ApplicationWidget(QWidget):
         database = DatabaseActions()
         self.table_model = TableModel(database.select_movies())
         self.table_view = QTableView()
-        self.table_view.setModel(self.table_model)
+
+        self.proxyModel = QtCore.QSortFilterProxyModel()
+        self.proxyModel.setSourceModel(self.table_model)
+
+        self.table_view.setModel(self.proxyModel)
+        self.table_view.setSortingEnabled(True)
+        self.table_view.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.edit_button = QPushButton("Edit")
         self.remove_button = QPushButton("Remove")
+        self.edit_button.clicked.connect(self.edit_button_clicked)
         self.setup_database_layout()
     
     def setup_database_layout(self):
@@ -109,3 +117,6 @@ class ApplicationWidget(QWidget):
         table_button_layout.addWidget(self.remove_button, alignment=Qt.AlignRight)
         self.database_tab.layout.addLayout(table_button_layout)
         self.database_tab.setLayout(self.database_tab.layout)
+
+    def edit_button_clicked(self):
+        pass
