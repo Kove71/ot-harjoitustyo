@@ -17,4 +17,6 @@
 | 25.5  | 7    | Koodin refaktorointia ja implementoitu TabWidget, jolloin käyttöliittymässä voi olla useampi näkymä |
 | 26.6  | 5    | Implementoitu käyttöliittymä tietokannalle |
 | 28.6  | 2    | Testihommia ja käyttöliittymää laajennettu |
-| yht   | 49   | |
+| 02.5  | 2    | Elokuvatietojen muokkausta implementoitu |
+| 03.5  | 8    | Elokuvatietojen muokkaus ja elokuvien poisto implementoitu |
+| yht   | 61   | |

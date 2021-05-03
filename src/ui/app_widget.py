@@ -15,7 +15,8 @@ from PyQt5.QtWidgets import ( # pylint: disable=no-name-in-module
     QTableView,
     QListView,
     QAbstractItemView,
-    QTabWidget
+    QTabWidget,
+    QStackedLayout
 )
 from PyQt5 import QtCore
 from PyQt5.QtCore import Qt
@@ -23,6 +24,7 @@ from PyQt5.QtCore import Qt
 from services.imdb_api import IMDBSearch # pylint: disable=wrong-import-position
 from ui.table_model import TableModel # pylint: disable=wrong-import-position
 from ui.search_result_model import SearchModel
+from ui.edit_window import EditWindow
 from repositories.database_actions import DatabaseActions
 
 class ApplicationWidget(QWidget):
@@ -103,12 +105,15 @@ class ApplicationWidget(QWidget):
 
         self.table_view.setModel(self.proxyModel)
         self.table_view.setSortingEnabled(True)
+        self.table_view.verticalHeader().hide()
+        #self.table_view.hideColumn(0)
         self.table_view.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.edit_button = QPushButton("Edit")
         self.remove_button = QPushButton("Remove")
         self.edit_button.clicked.connect(self.edit_button_clicked)
+        self.remove_button.clicked.connect(self.remove_button_clicked)
         self.setup_database_layout()
-    
+ 
     def setup_database_layout(self):
         self.database_tab.layout = QVBoxLayout()
         table_button_layout = QHBoxLayout()
@@ -119,4 +124,28 @@ class ApplicationWidget(QWidget):
         self.database_tab.setLayout(self.database_tab.layout)
 
     def edit_button_clicked(self):
-        pass
+        if len(self.table_view.selectedIndexes()) > 0:
+            movie_id = self.table_view.selectedIndexes()[0].data()
+            movie_title = self.table_view.selectedIndexes()[1].data()
+            movie_release = self.table_view.selectedIndexes()[2].data()
+            self.w = EditWindow(movie_id, movie_title, movie_release)
+            self.w.update_button.clicked.connect(self.update_button_clicked)
+            self.w.show()
+
+    def remove_button_clicked(self):
+        if len(self.table_view.selectedIndexes()) > 0:
+            movie_id = self.table_view.selectedIndexes()[0].data()
+            database = DatabaseActions()
+            database.delete_row(movie_id)
+            self.table_model.movie_data = database.select_movies()
+            self.table_model.layoutChanged.emit()
+
+    def update_button_clicked(self):
+        database = DatabaseActions()
+        watch_date_entry = self.w.watch_date_entry.date()
+        date = watch_date_entry.toString("yyyy-MM-dd")
+        database.update_data(self.w.id, self.w.review_entry.currentText(), date)
+        self.table_model.movie_data = database.select_movies()
+        self.table_model.layoutChanged.emit()
+        self.w.close()
+        

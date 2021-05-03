@@ -4,7 +4,7 @@ from PyQt5.QtCore import Qt
 
 class TableModel(QtCore.QAbstractTableModel):
    
-    header_labels = ["Title", "Release Date", "Director", "IMDB Rating", "Length", "Review", "Watch Date"]
+    header_labels = ["Id", "Title", "Release Date", "Director", "IMDB Rating", "Length Mins", "Review", "Watch Date"]
 
     def __init__(self, data):
         super().__init__()
@@ -23,5 +23,7 @@ class TableModel(QtCore.QAbstractTableModel):
         return len(self.movie_data)
     
     def columnCount(self, index):
+        if len(self.movie_data) == 0:
+            return 0
         return len(self.movie_data[0])
     

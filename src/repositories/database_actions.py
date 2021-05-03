@@ -26,10 +26,18 @@ class DatabaseActions:
         return True
 
     def select_movies(self):
-        self.cur.execute("SELECT title, release_date, director, \
-            avg_rating, length, review, watched FROM Movies")
+        self.cur.execute("SELECT id, title, release_date, director, \
+            avg_rating, length_mins, review, watched FROM Movies")
         rows = self.cur
         movies = []
         for row in rows:
             movies.append(row)
         return movies
+    
+    def update_data(self, movie_id, review, watch_date):
+        self.cur.execute("UPDATE Movies SET review=?, watched=? WHERE id=?", [
+            review, watch_date, movie_id
+        ])
+
+    def delete_row(self, movie_id):
+        self.cur.execute("DELETE FROM Movies WHERE id =?", [movie_id])
