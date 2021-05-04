@@ -4,7 +4,7 @@ Lataa projektin viimeisin release README.md:stä
 
 ## Ohjelman käynnistys
 
-Ennen ohjelman käynnistetään asenna riippuvuudet komennolla:
+Ennen kuin käynnistät ohjelman, asenna riippuvuudet komennolla:
 
 ```bash
 poetry install
