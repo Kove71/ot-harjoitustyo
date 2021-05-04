@@ -16,8 +16,13 @@
 | 24.4  | 3    | Tutustuminen pyqt5:n TabWidget-luokkaan ja käyttöliittymärakenteen suunnittelu |
 | 25.5  | 7    | Koodin refaktorointia ja implementoitu TabWidget, jolloin käyttöliittymässä voi olla useampi näkymä |
 | 26.6  | 5    | Implementoitu käyttöliittymä tietokannalle |
+<<<<<<< HEAD
 | 28.6  | 2    | Testihommia ja käyttöliittymää laajennettu |
 | 02.5  | 2    | Elokuvatietojen muokkausta implementoitu |
 | 03.5  | 8    | Elokuvatietojen muokkaus ja elokuvien poisto implementoitu |
 | 03.5  | 4    | Sain korjattua bugin, jossa ohjelma kaatui aina kun päivitettiin tietokantanäkymä. Poistin sorttauksen |
 | yht   | 65   | |
+=======
+| 27.7  | 3    | Release, sekvenssikaavio ja testausta |
+| yht   | 52   | |
+>>>>>>> 03ef8af63e6a1d1bc132e087849cb40a59680c38
