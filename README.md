@@ -4,11 +4,11 @@ Harjoitustyö on elokuvien kirjallapito-sovellus. Käyttäjä voi etsiä elokuvi
 
 ## Nykyinen versio
 
-Tämänhetkisen version tarkoitus on täyttää kolmannen viikon vaatimukset.
+Tämänhetkisen version tarkoitus on täyttää kuudennen viikon vaatimukset.
 
 ### Toiminnallisuus
 
-Tämänhetkisessä versiossa on implentoitu käyttöliittymä, jonka avulla käyttäjä pystyy hakemaan elokuvia elokuvan nimen perusteella. Ohjelma palauttaa listaan parhaiten osuvat elokuvat ja käyttäjä voi lisätä haluamansa elokuvat omaan tietokantaan, johon tallenetaan elokuvan tiedot. Käyttäjä voi selata lisäämiään elokuvia käyttöliittymän kautta
+Tämänhetkisessä versiossa on implentoitu käyttöliittymä, jonka avulla käyttäjä pystyy hakemaan elokuvia elokuvan nimen perusteella. Ohjelma palauttaa listaan parhaiten osuvat elokuvat ja käyttäjä voi lisätä haluamansa elokuvat omaan tietokantaan, johon tallenetaan elokuvan tiedot. Käyttäjä voi selata lisäämiään elokuvia käyttöliittymän kautta ja poistaa ja muokata elokuvien tietoja.
 
 ### Käyttöohje
 
@@ -36,7 +36,7 @@ Tämän jälkeen juurihakemistosta löytyy hakemisto htmlcov/, josta voi katsoa 
 
 ### Tiedetyt ongelmat
 
-Virhetilanteet ovat edelleen huonosti käsiteltyjä, eli ohjelma pääosin olettaa kaiken toimivan hyvin ja käyttäjän olevan järkevä. Tietokannan tutkiminen on vielä alkuvaiheessa. Kolumnit eivät ole nimettyjä eikä tietokantaa pysty järjestämään tai editoida.
+Virhetilanteet ovat edelleen huonosti käsiteltyjä, eli ohjelma pääosin olettaa kaiken toimivan hyvin ja käyttäjän olevan järkevä. Tietokantaa ei pysty järjestämään.
 
 Etätyöpöydällä tietokanta ei toimi (locked), mutta käyttöliittymä toimii, ja ssh-melkillä tietokanta toimii, mutta käyttöliittymä ei.
 
@@ -47,6 +47,7 @@ Api-kutsut ovat rajoittuneet 5000:n päivässä. On epätodennäköistä, että 
 - [Työaikakirja](./documentation/tyoaikakirja.md)
 - [Vaatimusmäärittely](./documentation/vaatimusmaarittely.md)
 - [Arkkitehtuuri](./documentation/arkkitehtuuri.md)
+- [Käyttöohje](./documentation/kayttoohje.md)
 
 ## Python-versio
 
