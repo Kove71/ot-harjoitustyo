@@ -6,7 +6,7 @@ Sovellus pitää kirjaa käyttäjän katsomista elokuvista ja niihin liittyvist�
 Alkuvaiheessa sovelluksessa ei tule olemaan käyttäjiä, vaan se tallentaa kaikki tiedot yleisesti. Useammat käyttäjät kuitenkin mahdollistaisivat paljon, joten ohjelma pitää suunnitella niin, että käyttäjien implementointi on helppoa.
 
 ## Toiminallisuus alkuvaiheessa
--Elokuvien lisäys ja poisto, omien tietojen, kuten katsomispäivän ja oman arvion tallentaminen kuhunkin elokuvaan
+-Elokuvien lisäys ja poisto, omien tietojen, kuten katsomispäivän ja oman arvion tallentaminen kuhunkin elokuvaan *(tehty)*
 
 -Järjestä elokuvat listassa tietojen perusteella.
 
