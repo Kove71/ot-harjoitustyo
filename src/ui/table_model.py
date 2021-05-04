@@ -3,7 +3,9 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import Qt, QModelIndex
 
 class TableModel(QtCore.QAbstractTableModel):
-   
+   """Qt5:n käyttämä luokka, joka on vastuussa käyttöliittymäkomponentin datan käsitelystä. 
+      Metodit ovat Qt5:n omia standardimetodeita. Tämä luokka käsittelee tietokannan dataa.
+   """
     header_labels = ["Id", "Title", "Release Date", "Director", "IMDB Rating", "Length Mins", "Review", "Watch Date"]
 
     def __init__(self, data):

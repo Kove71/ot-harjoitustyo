@@ -10,14 +10,31 @@ from repositories.database_actions import DatabaseActions # pylint: disable=wron
 
 
 class IMDBSearch:
+    """Luokka, joka on vastuussa API-kutsuista.
 
+    Attributes:
+        search_url: url-osoite elokuvahaun API-kutsuun
+        title_url: url-osoite elokuvatietojen API-kutsuun
+        movie_list: lista elokuvahaun tuloksista
+        result_length: elokuvahaun tulosten määrä
+    """
+    
     def __init__(self):
+        """Luokan konstruktori
+        """
+
         self.search_url = "https://imdb-api.com/en/API/SearchMovie/k_grjsr7l7/"
         self.title_url = "https://imdb-api.com/en/API/Title/k_grjsr7l7/"
         self.movie_list = []
         self.result_length = 0
 
     def request_search(self, searchword: str):
+        """Hakee elouvat käyttäen IMDB-APIa, ja palauttaa tulokset listassa
+
+        Args:
+            searchword: hakusana
+        """
+
         if len(searchword) == 0:
             self.movie_list = []
             return self.movie_list
@@ -31,6 +48,12 @@ class IMDBSearch:
         return self.movie_list
 
     def request_title(self, title: str):
+        """Hakee valitun elokuvan tiedot ja lisää elokuvan tietokantaan
+        
+        Args:
+            title: elokuvan IMDB-nimi
+        """
+
         response = requests.get(self.title_url + title)
         result = response.json()
         movie_item = MovieDetails(result)

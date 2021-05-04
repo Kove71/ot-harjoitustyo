@@ -29,6 +29,11 @@ from repositories.database_actions import DatabaseActions
 
 class ApplicationWidget(QWidget):
 
+    """Käyttöliittymästä vastaava luokka, jossa on on vastuussa suurimmasta osasta käyttöliittymää.
+
+    
+    """
+
     def __init__(self, parent):
         super(QWidget, self).__init__(parent)
         self.layout = QVBoxLayout(self)

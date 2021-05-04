@@ -21,10 +21,29 @@ from repositories.database_actions import DatabaseActions
 
 class EditWindow(QWidget):
 
+    """Käyttöliittymäluokka edit-ikkunalle. Perii QWidget-luokan.
+    
+    Attributes:
+        id: elokuvan id
+        title: elokuvan nimi
+    """
+
     def __init__(self, movie_id, movie_title, movie_release):
+        """Luokan konstruktori.
+
+        Args:
+            movie_id: elokuvan tietokanta-id
+            movie_title: elokuvan nimi
+            movie_release: elokuvan julkaisupäivä
+        """
         super().__init__()
         self.id = movie_id
         self.title = movie_title
+        self.setup_ui()
+
+    def setup_ui(self):
+        """Alustaa ikkunan käyttöliittymäkomponentit.
+        """
         minimum_date = QDate.fromString(movie_release, "yyyy-MM-dd")
         maximum_date = QDate.currentDate()
         self.title_label = QLabel(self.title)
@@ -41,6 +60,8 @@ class EditWindow(QWidget):
 
     
     def setup_layout(self):
+        """Alustaa ikkunan käyttöliittymäasettelun
+        """
         layout = QVBoxLayout()
         review_layout = QHBoxLayout()
         watch_date_layout = QHBoxLayout()
