@@ -1,6 +1,6 @@
 import sys
 from PyQt5 import QtCore
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QModelIndex
 
 class TableModel(QtCore.QAbstractTableModel):
    
@@ -26,4 +26,6 @@ class TableModel(QtCore.QAbstractTableModel):
         if len(self.movie_data) == 0:
             return 0
         return len(self.movie_data[0])
+    
+
     

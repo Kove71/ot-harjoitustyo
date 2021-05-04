@@ -19,4 +19,5 @@
 | 28.6  | 2    | Testihommia ja käyttöliittymää laajennettu |
 | 02.5  | 2    | Elokuvatietojen muokkausta implementoitu |
 | 03.5  | 8    | Elokuvatietojen muokkaus ja elokuvien poisto implementoitu |
-| yht   | 61   | |
+| 03.5  | 4    | Sain korjattua bugin, jossa ohjelma kaatui aina kun päivitettiin tietokantanäkymä. Poistin sorttauksen |
+| yht   | 65   | |

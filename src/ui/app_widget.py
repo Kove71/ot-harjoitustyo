@@ -99,14 +99,9 @@ class ApplicationWidget(QWidget):
         database = DatabaseActions()
         self.table_model = TableModel(database.select_movies())
         self.table_view = QTableView()
-
-        self.proxyModel = QtCore.QSortFilterProxyModel()
-        self.proxyModel.setSourceModel(self.table_model)
-
-        self.table_view.setModel(self.proxyModel)
+        self.table_view.setModel(self.table_model)
         self.table_view.setSortingEnabled(True)
         self.table_view.verticalHeader().hide()
-        #self.table_view.hideColumn(0)
         self.table_view.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.edit_button = QPushButton("Edit")
         self.remove_button = QPushButton("Remove")
