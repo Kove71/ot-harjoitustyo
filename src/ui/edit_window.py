@@ -36,15 +36,18 @@ class EditWindow(QWidget):
             movie_title: elokuvan nimi
             movie_release: elokuvan julkaisupäivä
         """
+        
         super().__init__()
         self.id = movie_id
         self.title = movie_title
+        self.release = movie_release
         self.setup_ui()
 
     def setup_ui(self):
         """Alustaa ikkunan käyttöliittymäkomponentit.
         """
-        minimum_date = QDate.fromString(movie_release, "yyyy-MM-dd")
+
+        minimum_date = QDate.fromString(self.release, "yyyy-MM-dd")
         maximum_date = QDate.currentDate()
         self.title_label = QLabel(self.title)
         self.review_label = QLabel("Review:")
@@ -62,6 +65,7 @@ class EditWindow(QWidget):
     def setup_layout(self):
         """Alustaa ikkunan käyttöliittymäasettelun
         """
+
         layout = QVBoxLayout()
         review_layout = QHBoxLayout()
         watch_date_layout = QHBoxLayout()

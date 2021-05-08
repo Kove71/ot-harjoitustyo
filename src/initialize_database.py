@@ -1,11 +1,18 @@
-from database_connection import get_connection
+from database_connection import get_connection, get_test_connection
 
-conn = get_connection()
 
-def drop_table():
+def drop_table(test = False):
+    if test:
+        conn = get_test_connection()
+    else:
+        conn = get_connection()
     conn.execute("DROP TABLE if exists Movies")
 
-def create_table():
+def create_table(test = False):
+    if test:
+        conn = get_test_connection()
+    else:
+        conn = get_connection()
     conn.execute('''CREATE TABLE if not exists Movies
             (id INTEGER PRIMARY KEY,
             title TEXT NOT NULL,

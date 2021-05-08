@@ -18,7 +18,7 @@ class IMDBSearch:
         movie_list: lista elokuvahaun tuloksista
         result_length: elokuvahaun tulosten määrä
     """
-    
+
     def __init__(self):
         """Luokan konstruktori
         """
@@ -49,7 +49,7 @@ class IMDBSearch:
 
     def request_title(self, title: str):
         """Hakee valitun elokuvan tiedot ja lisää elokuvan tietokantaan
-        
+
         Args:
             title: elokuvan IMDB-nimi
         """
