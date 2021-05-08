@@ -22,5 +22,7 @@
 | 03.5  | 8    | Elokuvatietojen muokkaus ja elokuvien poisto implementoitu |
 | 03.5  | 4    | Sain korjattua bugin, jossa ohjelma kaatui aina kun päivitettiin tietokantanäkymä. Poistin sorttauksen |
 | 04.5  | 3    | Kommentit ja arkkitehtuuri |
-| yht   | 71   | |
+| 07.5  | 2    | Dokumentointi |
+| 08.5  | 3    | Testaaminen |
+| yht   | 76   | |
 
