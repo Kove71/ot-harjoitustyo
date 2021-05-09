@@ -24,5 +24,6 @@
 | 04.5  | 3    | Kommentit ja arkkitehtuuri |
 | 07.5  | 2    | Dokumentointi |
 | 08.5  | 3    | Testaaminen |
-| yht   | 76   | |
+| 09.5  | 2    | Testaus ja dokumentointi viimeistelty. Sorttaus korjattu |
+| yht   | 78   | |
 
