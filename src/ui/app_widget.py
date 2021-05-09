@@ -121,6 +121,7 @@ class ApplicationWidget(QWidget):
                 self.movie_added_label.setText("Movie added!")
             database = DatabaseActions()
             self.table_model.movie_data = database.select_movies()
+            self.table_model.layoutAboutToBeChanged.emit()
             self.table_model.layoutChanged.emit()
                 
     def setup_database_ui(self):
@@ -131,7 +132,12 @@ class ApplicationWidget(QWidget):
         database = DatabaseActions()
         self.table_model = TableModel(database.select_movies())
         self.table_view = QTableView()
-        self.table_view.setModel(self.table_model)
+
+
+        self.proxy_model = QtCore.QSortFilterProxyModel()
+        self.proxy_model.setSourceModel(self.table_model)
+        
+        self.table_view.setModel(self.proxy_model)
         self.table_view.setSortingEnabled(True)
         self.table_view.verticalHeader().hide()
         self.table_view.setSelectionBehavior(QAbstractItemView.SelectRows)
@@ -179,6 +185,7 @@ class ApplicationWidget(QWidget):
             database = DatabaseActions()
             database.delete_row(movie_id)
             self.table_model.movie_data = database.select_movies()
+            self.table_model.layoutAboutToBeChanged.emit()
             self.table_model.layoutChanged.emit()
 
     def update_button_clicked(self):
@@ -192,6 +199,7 @@ class ApplicationWidget(QWidget):
         date = watch_date_entry.toString("yyyy-MM-dd")
         database.update_data(self.w.id, self.w.review_entry.currentText(), date)
         self.table_model.movie_data = database.select_movies()
+        self.table_model.layoutAboutToBeChanged.emit()
         self.table_model.layoutChanged.emit()
         self.w.close()
         

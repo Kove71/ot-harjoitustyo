@@ -5,6 +5,7 @@ laskarit/viikko2/unicafe/htmlcov
 #project
 src/__pycache__/
 data/database.db
+data/fake_database.db
 .coverage
 htmlcov/
 src/tests/__pycache__/

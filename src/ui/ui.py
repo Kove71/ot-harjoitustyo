@@ -9,8 +9,14 @@ from ui.app_widget import ApplicationWidget
 
 
 class MainWindow(QMainWindow):
+    """Käyttöliittymän pääikkuna, johon asetetaan kaikki käyttöliittymäkomponentit.
+    """
 
     def __init__(self):
+        """Luokan konstruktori. Määrittelee ikkunan nimen, koon ja luo 
+        ApplicationWidget-luokan, jossa käyttöliittymän toiminta on määritelty.
+        """
+
         super().__init__()
         self.setWindowTitle("Movie Application")
         self.left = 0

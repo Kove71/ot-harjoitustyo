@@ -47,16 +47,16 @@ class IMDBSearch:
             self.movie_list.append(SearchMovie(results[i]))
         return self.movie_list
 
-    def request_title(self, title: str):
+    def request_title(self, title: str, test = False):
         """Hakee valitun elokuvan tiedot ja lisää elokuvan tietokantaan
 
         Args:
             title: elokuvan IMDB-nimi
+            test: määrittelee luodaanko yhteys testitietokantaan vai tavalliseen
         """
 
         response = requests.get(self.title_url + title)
         result = response.json()
         movie_item = MovieDetails(result)
-        database = DatabaseActions()
-        database.select_movies()
+        database = DatabaseActions(test)
         return database.add_movie_to_database(movie_item)

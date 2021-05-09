@@ -8,6 +8,9 @@ from PyQt5.QtCore import Qt
 
 
 class SearchModel(QtCore.QAbstractListModel):
+    """Qt5:n käyttämä luokka, joka on vastuussa käyttöliittymäkomponentin datan käsitelystä. 
+       Metodit ovat Qt5:n omia standardimetodeita. Tämä luokka käsittelee hakulistan dataa.
+    """
 
     def __init__(self, movie_list = []):
         super().__init__()

@@ -11,12 +11,14 @@ class TestInit(unittest.TestCase):
 
     def test_create_table(self):
         create_table(self.test_case)
-        self.cur.execute("SELECT count(name) FROM sqlite_master WHERE type='table' AND name='Movies'")
+        self.cur.execute("SELECT count(name) FROM sqlite_master \
+            WHERE type='table' AND name='Movies'")
         found_value = self.cur.fetchone()[0]
         self.assertEqual(found_value, 1)
 
     def test_drop_table(self):
         drop_table(self.test_case)
-        self.cur.execute("SELECT count(name) FROM sqlite_master WHERE type='table' AND name='Movies'")
+        self.cur.execute("SELECT count(name) FROM sqlite_master \
+            WHERE type='table' AND name='Movies'")
         found_value = self.cur.fetchone()[0]
         self.assertEqual(found_value, 0)
