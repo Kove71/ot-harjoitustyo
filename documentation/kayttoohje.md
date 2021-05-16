@@ -40,7 +40,7 @@ Kun haluat lisätä elokuvan tietokantaan, valitse haluamasi elokuva listasta ja
 
 ### Tietokantanäkymä
 
-Painamalla ylhäällä olevaa "Movies"-tabia voit vaihtaa näkymän tietokantanäkymään. Voit selata lisäämiäsi elokuvia ja niiden tietoja.
+Painamalla ylhäällä olevaa "Movies"-tabia voit vaihtaa näkymän tietokantanäkymään. Voit selata lisäämiäsi elokuvia ja niiden tietoja. Klikkaamalla sarakkeiden otsikoita voit järjestää tiedot niiden mukaan.
 
 ![table_view](https://user-images.githubusercontent.com/81042269/117036928-9b34ac80-ad0e-11eb-9894-b3db7c93680a.png)
 
