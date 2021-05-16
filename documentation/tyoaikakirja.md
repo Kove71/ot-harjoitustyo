@@ -25,5 +25,7 @@
 | 07.5  | 2    | Dokumentointi |
 | 08.5  | 3    | Testaaminen |
 | 09.5  | 2    | Testaus ja dokumentointi viimeistelty. Sorttaus korjattu |
-| yht   | 78   | |
+| 15.5  | 1    | Dokumentointia |
+| 16.5  | 2    | Dokumentointia ja viimeiset testit |
+| yht   | 81   | |
 
