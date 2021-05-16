@@ -58,8 +58,10 @@ Pylint tuottaa ongelmia kun muokkaan sys.pathia, jotta löytäisin omat moduulit
 
 ## Viimeisin release
 
-Viimeisin release on viikko 6
+Viimeisin release on viikko 7
 
 [Viikko 5](https://github.com/meitsin-ohte/ot-harjoitustyo/releases/tag/viikko5)
 
 [Viikko 6](https://github.com/meitsin-ohte/ot-harjoitustyo/releases/tag/viikko6)
+
+[Viikko 7](https://github.com/meitsin-ohte/ot-harjoitustyo/releases/tag/viikko7)
