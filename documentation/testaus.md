@@ -14,7 +14,7 @@ Sovellusogiikka ja ohjelman pysyväistallenus on testattu Unittestin avulla
 
 ### Testauskattavuus
 
--
+![coverage](https://user-images.githubusercontent.com/81042269/118396715-63f0c480-b659-11eb-9941-e1ff07d2593b.png)
 
 ## Järjestelmätestaus
 
