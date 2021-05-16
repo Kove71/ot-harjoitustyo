@@ -1,6 +1,9 @@
 # Vaatimusmäärittely
+
+Vaatimusmäärittely on päivitetty vastaamaan ohjelman nykyistä toiminnallisuutta.
+
 ## Sovelluksen tarkoitus
-Sovellus pitää kirjaa käyttäjän katsomista elokuvista ja niihin liittyvistä tiedoista (esim. katsomis- ja julkaisupäivä, oma arvio, kieli jne.)
+Sovellus pitää kirjaa käyttäjän katsomista elokuvista ja niihin liittyvistä tiedoista (esim. katsomis- ja julkaisupäivä, oma arvio jne.)
 
 ## Toiminallisuus
 
