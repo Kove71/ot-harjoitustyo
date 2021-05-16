@@ -38,7 +38,7 @@ Tämän jälkeen juurihakemistosta löytyy hakemisto htmlcov/, josta voi katsoa 
 
 Etätyöpöydällä tietokanta ei toimi (locked), mutta käyttöliittymä toimii, ja ssh-melkillä tietokanta toimii, mutta käyttöliittymä ei.
 
-Api-kutsut ovat rajoittuneet 5000:n päivässä. On epätodennäköistä, että tämä tulisi täyteen, mutta kannattaa silti ottaa huomioon. Haku vie aina yhden api-kutsun, elokuvan lisäys yhden ja testaus kolme.
+Api-kutsut ovat rajoittuneet 5000:n päivässä. On epätodennäköistä, että tämä tulisi täyteen, mutta kannattaa silti ottaa huomioon.
 
 ## Dokumentaatio
 
