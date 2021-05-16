@@ -48,6 +48,7 @@ Api-kutsut ovat rajoittuneet 5000:n päivässä. On epätodennäköistä, että 
 - [Vaatimusmäärittely](./documentation/vaatimusmaarittely.md)
 - [Arkkitehtuuri](./documentation/arkkitehtuuri.md)
 - [Käyttöohje](./documentation/kayttoohje.md)
+- [Testausdokumentti](./documentation/testaus.md)
 
 ## Python-versio
 
