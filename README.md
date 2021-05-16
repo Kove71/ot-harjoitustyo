@@ -4,7 +4,7 @@ Harjoitustyö on elokuvien kirjallapito-sovellus. Käyttäjä voi etsiä elokuvi
 
 ## Nykyinen versio
 
-Tämänhetkisen version tarkoitus on täyttää kuudennen viikon vaatimukset.
+Tämänhetkisen version tarkoitus on täyttää seitsemännen viikon vaatimukset.
 
 ### Toiminnallisuus
 
@@ -35,8 +35,6 @@ poetry run invoke coverage-report
 Tämän jälkeen juurihakemistosta löytyy hakemisto htmlcov/, josta voi katsoa raportin.
 
 ### Tiedetyt ongelmat
-
-Virhetilanteet ovat edelleen huonosti käsiteltyjä, eli ohjelma pääosin olettaa kaiken toimivan hyvin ja käyttäjän olevan järkevä. Tietokantaa ei pysty järjestämään.
 
 Etätyöpöydällä tietokanta ei toimi (locked), mutta käyttöliittymä toimii, ja ssh-melkillä tietokanta toimii, mutta käyttöliittymä ei.
 
